@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace DocFXRazor
 {
@@ -23,12 +24,15 @@ namespace DocFXRazor
             services.AddMvc();
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggers, IHostingEnvironment env)
         {
+            loggers.AddConsole();
+            loggers.AddDebug();
+
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
             else
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/error");
 
             app.UseStaticFiles();
 

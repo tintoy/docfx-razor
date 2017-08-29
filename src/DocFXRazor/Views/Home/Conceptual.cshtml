@@ -1,0 +1,15 @@
+﻿@using Newtonsoft.Json.Linq
+
+@{
+	ViewData["Title"] = "Home Page";
+}
+
+@model JObject
+
+@Html.Raw(
+	Model.Value<string>("rawTitle")
+)
+
+@Html.Raw(
+	Model.Value<string>("conceptual")
+)
