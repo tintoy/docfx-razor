@@ -1,0 +1,20 @@
+# Generated web site
+_site/
+
+# Code
+bin/
+obj/
+
+# Test results
+TestResults/
+*.trx
+
+# Visual Studio / VSCode
+.vs/
+.vscode/docfx-assistant/
+
+# User-specific settings
+*.csproj.user
+
+# NodeJS modules
+node_modules/
