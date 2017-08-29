@@ -1,0 +1,3 @@
+[submodule "docfx-seed"]
+	path = docfx-seed
+	url = https://github.com/docascode/docfx-seed.git
