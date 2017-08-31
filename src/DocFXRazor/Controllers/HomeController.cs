@@ -55,11 +55,11 @@ namespace DocFXRazor.Controllers
                 relativePath, jsonFile, System.IO.File.Exists(jsonFile)
             );
 
-            JObject model;
+            ConceptualTopic model;
             using (TextReader reader = System.IO.File.OpenText(jsonFile))
             using (JsonReader jsonReader = new JsonTextReader(reader))
             {
-                model = JObject.Load(jsonReader);
+                model = new JsonSerializer().Deserialize<ConceptualTopic>(jsonReader);
             }
 
             return View("Conceptual", model);

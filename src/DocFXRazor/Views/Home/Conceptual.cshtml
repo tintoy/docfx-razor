@@ -1,16 +1,12 @@
-﻿@using Newtonsoft.Json.Linq
+﻿@{
+	ViewData["Title"] = Model.Title;
+	ViewData["UID"] = Model.UID;
 
-@{
-	ViewData["Title"] = "Home Page";
 	Layout = "_DocFXLayout";
 }
 
-@model JObject
+@model ConceptualTopic
 
-@Html.Raw(
-	Model.Value<string>("rawTitle")
-)
+@Model.TitleHtml
 
-@Html.Raw(
-	Model.Value<string>("conceptual")
-)
+@Model.ContentHtml
